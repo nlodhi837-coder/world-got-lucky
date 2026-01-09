@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday ❤️</title>
+<style>
+body{
+    margin:0;
+    height:100vh;
+    background:linear-gradient(135deg,#ff4e50,#f9d423);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-family:sans-serif;
+    color:white;
+    text-align:center;
+}
+.card{
+    animation:slide 2s ease;
+}
+button{
+    margin-top:20px;
+    padding:15px 30px;
+    border:none;
+    border-radius:20px;
+    font-size:1em;
+}
+@keyframes slide{
+    from{opacity:0;transform:translateY(40px);}
+    to{opacity:1;transform:translateY(0);}
+}
+</style>
+</head>
+<body>
+<div class="card">
+    <h1>🎉 Happy Birthday Neighbour ❤️</h1>
+    <p>Born on 14 January 2005 🎂</p>
+    <button onclick="location.href='step3.html'">Next ➜</button>
+</div>
+</body>
+</html>
