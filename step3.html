@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The World Got Lucky ❤️</title>
+<style>
+body{
+    margin:0;
+    height:100vh;
+    background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+    color:white;
+    font-family:sans-serif;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    overflow:hidden;
+}
+.box{
+    background:rgba(0,0,0,0.4);
+    padding:25px;
+    border-radius:20px;
+    width:90%;
+    max-width:400px;
+    animation:fade 2s ease;
+}
+.heart{
+    position:fixed;
+    bottom:-20px;
+    font-size:20px;
+    animation:float 6s linear infinite;
+}
+@keyframes fade{
+    from{opacity:0;transform:scale(0.9);}
+    to{opacity:1;transform:scale(1);}
+}
+@keyframes float{
+    to{transform:translateY(-110vh);opacity:0;}
+}
+</style>
+</head>
+<body>
+
+<div class="box">
+    <h2>🌍 The World Got Lucky On</h2>
+    <h3>14 January 2005 ❤️</h3>
+    <div id="counter"></div>
+    <p style="margin-top:15px;">
+        And someone nearby feels lucky every second 😉
+    </p>
+</div>
+
+<script>
+const birthDate = new Date("2005-01-14T00:00:00");
+
+function updateCounter(){
+    const now = new Date();
+    let diff = Math.floor((now - birthDate)/1000);
+
+    const years = Math.floor(diff / (365.25*24*3600));
+    diff -= years*365.25*24*3600;
+
+    const days = Math.floor(diff / (24*3600));
+    diff -= days*24*3600;
+
+    const hours = Math.floor(diff / 3600);
+    diff -= hours*3600;
+
+    const minutes = Math.floor(diff / 60);
+    const seconds = diff % 60;
+
+    document.getElementById("counter").innerHTML = `
+        ⏳ ${years} Years<br>
+        📆 ${days} Days<br>
+        ⏰ ${hours} Hours<br>
+        ⏱️ ${minutes} Minutes<br>
+        ⏲️ ${seconds} Seconds
+    `;
+}
+
+function heart(){
+    const h=document.createElement("div");
+    h.className="heart";
+    h.innerHTML="❤️";
+    h.style.left=Math.random()*100+"vw";
+    h.style.fontSize=(Math.random()*20+15)+"px";
+    document.body.appendChild(h);
+    setTimeout(()=>h.remove(),6000);
+}
+
+setInterval(updateCounter,1000);
+setInterval(heart,350);
+updateCounter();
+</script>
+
+</body>
+</html>
