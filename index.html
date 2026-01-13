@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Get Ready 🎉</title>
+<style>
+body{
+  background:#000;
+  color:#fff;
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-size:60px;
+  font-family:Arial;
+}
+</style>
+</head>
+<body>
+
+<div id="count">1</div>
+
+<script>
+let c = 1;
+setInterval(()=>{
+  c++;
+  if(c<=3) document.getElementById("count").innerText = c;
+  else if(c==4) document.getElementById("count").innerText="Ready 🎉";
+  else window.location.href="step2.html";
+},1000);
+</script>
+
+</body>
+</html>
